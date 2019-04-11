@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CA.DAL
+{
+    class Total
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public decimal Coef { get; set; }
+        public decimal WeeklyAvgMarketCap { get; set; }
+        public decimal WeeklyAvgPriceUSD { get; set; }
+        public decimal WeeklyAvgDailyVolume { get; set; }
+    }
+}
