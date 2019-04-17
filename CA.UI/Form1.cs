@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CA.Scrapper.Core;
 using CA.Scrapper.Core.Marketcap;
+using System.Threading;
 using CA.DAL;
+using CA.BL;
 
 namespace CA.UI
 {
@@ -36,19 +38,36 @@ namespace CA.UI
 
         private void Parser_OnNewData(object arg1, Cryptocurrency[] arg2)
         {
-            ListIems.Items.AddRange(arg2);
+            //ListIems.Items.AddRange(arg2);
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            parser.Settings = new MarketcapSettings((int)numericUpDown1.Value, (int)numericUpDown2.Value);
-            parser.Start();
+            if (ParseWorker.IsBusy != true)
+            {
+                ParseWorker.RunWorkerAsync();
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             parser.Abort();
+        }
+
+        private void ParseWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            //parser.Settings = new MarketcapSettings((int)numericUpDown1.Value, (int)numericUpDown2.Value);
+            //parser.Start();
+
+            WeeklyAverageCreator WACreator = new WeeklyAverageCreator();
+            WACreator.WeeklyAverages();
+        }
+
+        private void ParseWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
         }
     }
 }

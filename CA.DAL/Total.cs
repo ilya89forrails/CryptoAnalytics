@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CA.DAL
 {
-    class Total
+    public class Total
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,5 +14,6 @@ namespace CA.DAL
         public decimal WeeklyAvgMarketCap { get; set; }
         public decimal WeeklyAvgPriceUSD { get; set; }
         public decimal WeeklyAvgDailyVolume { get; set; }
+        public DateTime TimeStamp { get; set; }
     }
 }

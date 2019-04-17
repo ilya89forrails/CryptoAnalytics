@@ -65,13 +65,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cryptocurrency.cs" />
-    <Compile Include="CryptocurrencyContext.cs" />
+    <Compile Include="MainContext.cs" />
+    <Compile Include="Migrations\201904121126388_Initial.cs" />
+    <Compile Include="Migrations\201904121126388_Initial.Designer.cs">
+      <DependentUpon>201904121126388_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="Total.cs" />
-    <Compile Include="TotalContext.cs" />
     <Compile Include="WeeklyAverage.cs" />
-    <Compile Include="WeeklyAverageContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -90,6 +93,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201904121126388_Initial.resx">
+      <DependentUpon>201904121126388_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MarketGen.mdf">

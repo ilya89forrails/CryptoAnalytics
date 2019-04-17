@@ -13,5 +13,6 @@ namespace CA.DAL
         public decimal WeeklyAvgMarketCap { get; set; }
         public decimal WeeklyAvgPriceUSD { get; set; }
         public decimal WeeklyAvgDailyVolume { get; set; }
+        public DateTime TimeStamp { get; set; }
     }
 }
