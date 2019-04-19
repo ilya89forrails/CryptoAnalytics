@@ -11,7 +11,7 @@ namespace CA.DAL
         public static void Run()
         {
 
-            using (CryptocurrencyContext db = new CryptocurrencyContext())
+            using (MainContext db = new MainContext())
             {
                 Cryptocurrency bitcoin = new Cryptocurrency { Name = "Tom", Rank = 1};
                 Cryptocurrency ethereum = new Cryptocurrency { Name = "Sam", Rank = 2, PriceUSD = 200 };

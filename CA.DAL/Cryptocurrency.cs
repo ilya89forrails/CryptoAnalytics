@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CA.DAL
 {
     public class Cryptocurrency
     {
+        
         public int Id { get; set; }
         public int Rank { get; set; }
         public string Symbol { get; set; }
